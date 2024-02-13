@@ -1,0 +1,40 @@
+
+.realEstateTable{
+    font-size: 10px;
+    margin: 0 auto;
+}
+.realEstateTitles{
+    background-color: #06442D;
+    color: white;
+}
+.realEstateTitles th{
+    padding: 5px;
+}
+.estateLine td{
+    border-bottom: 1px solid #ccc;
+}
+.realEstateTable td{
+    text-align: center;
+    padding: 5px;
+}
+.addEstateBtnBlock{
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+.addEstateBtn{
+    width: 50%;
+    border: none;
+    background-color: #06442D;
+    color: white;
+    padding: 5px 0;
+    font-size: 9px;
+    border-radius: 5px;
+}
+.estateControls{
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+

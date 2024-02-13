@@ -1,0 +1,18 @@
+.tabs{
+    display: flex;
+    justify-content: space-between;
+    background-color: #06442D;
+    color: white;
+    font-size: 14px;
+    margin-top: 35px;
+}
+.tab{
+    padding: 10px;
+    border: none;
+}
+.active{
+    background: white;
+    color: #191919;
+    border: 1px solid #fff;
+    font-weight: 700;
+}

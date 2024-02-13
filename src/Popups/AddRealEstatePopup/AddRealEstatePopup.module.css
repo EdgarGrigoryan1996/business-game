@@ -1,0 +1,17 @@
+.addRealEstatePopupContent{
+    width: 100%;
+    padding: 0 5px;
+    box-sizing: border-box;
+}
+.line{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    width: 100%;
+}
+.line input[type="number"] {
+    border: none;
+    border-bottom: 1px solid #06442D;
+    width: 80px;
+    outline: none;
+}

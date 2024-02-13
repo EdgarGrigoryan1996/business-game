@@ -1,0 +1,12 @@
+.sharesBlock{
+    width: 100%;
+}
+.shareLine{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+.shareLine input{
+    width: 100px;
+    outline: none;
+}
