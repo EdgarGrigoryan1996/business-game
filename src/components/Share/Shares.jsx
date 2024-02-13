@@ -1,4 +1,3 @@
-import React from "react";
 import g from "../../globals.module.css";
 import { CiShoppingCart } from "react-icons/ci";
 import { LiaHandHoldingUsdSolid } from "react-icons/lia";
