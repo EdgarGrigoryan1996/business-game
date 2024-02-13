@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import g from "../../globals.module.css"
-import s from "../../Popups/StartSharePopup/StartSharePopup.module.css"
+import g from "../../globals.module.css";
+import s from "../../Popups/StartSharePopup/StartSharePopup.module.css";
 import StartSharePopup from "../../Popups/StartSharePopup/StartSharePopup.jsx";
 import AddRealEstatePopup from "../../Popups/AddRealEstatePopup/AddRealEstatePopup.jsx";
 
@@ -20,7 +20,7 @@ function CreatePlayer({ player, setPlayer, setGameStarted }) {
         <div className={g.topControlGroup}>
           <b>Կանխիկ գումար</b>
           <input
-            type="text"
+            type="number"
             className={g.underlineInput}
             value={startPlayer.cashMoney}
             onChange={(e) =>
@@ -31,7 +31,7 @@ function CreatePlayer({ player, setPlayer, setGameStarted }) {
         <div className={g.topControlGroup}>
           <b>Աշխատավարձ</b>
           <input
-            type="text"
+            type="number"
             className={g.underlineInput}
             value={startPlayer.salary}
             onChange={(e) =>
@@ -43,7 +43,7 @@ function CreatePlayer({ player, setPlayer, setGameStarted }) {
         <div className={g.topControlGroup}>
           <b>Ամսական ծախսեր</b>
           <input
-            type="text"
+            type="number"
             className={g.underlineInput}
             value={startPlayer.monthlyExpenses}
             onChange={(e) =>

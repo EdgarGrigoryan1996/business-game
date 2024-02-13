@@ -114,7 +114,7 @@ export default function Home() {
       passiveIncome: +realEstatesIncome,
     });
   }, [player.realEstate, gameStarted]);
-  if (gameStarted) {
+  if (!gameStarted) {
     return (
       <CreatePlayer
         player={player}
