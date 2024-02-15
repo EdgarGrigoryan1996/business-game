@@ -1,8 +1,6 @@
-
-import React, { useState } from "react";
 import s from "../ShareSalePopup.module.css";
 import PopupBtn from "../PopupBtn.jsx";
-
+import { useState } from "react";
 
 function RiskSharePopup({
   player,
@@ -37,6 +35,19 @@ function RiskSharePopup({
       setPlayer({
         ...player,
         cashMoney: player.cashMoney - price * count,
+        cashHistory: [
+          ...player.cashHistory,
+          {
+            dealTitle: "Առք",
+            riskDeal: true,
+            type: `${riskShareTitle}`,
+            dealCount: count,
+            dealPrice: price,
+            moneyBeforeDeal: player.cashMoney,
+            totalMoney: `-${count * price}`,
+            moneyAfterDeal: player.cashMoney - +count * +price,
+          },
+        ],
         riskShares: player.riskShares.map((riskShare) => {
           if (riskShare.id === riskShareId) {
             return {
@@ -128,10 +139,26 @@ function RiskSharePopup({
                   color={"#fff"}
                   background={"#217821"}
                   handleFunction={() => {
+                    console.log(sellCount);
+                    console.log(sellPrice);
                     setPlayer({
                       ...player,
                       cashMoney:
                         player.cashMoney + +(sellCount * dealSellPrice),
+                      cashHistory: [
+                        ...player.cashHistory,
+                        {
+                          dealTitle: "Վաճ",
+                          riskDeal: true,
+                          type: `${riskShareTitle}`,
+                          dealCount: sellCount,
+                          dealPrice: dealSellPrice,
+                          moneyBeforeDeal: player.cashMoney,
+                          totalMoney: `+${sellCount * dealSellPrice}`,
+                          moneyAfterDeal:
+                            player.cashMoney + +sellCount * +dealSellPrice,
+                        },
+                      ],
                       riskShares: player.riskShares.map((riskShare) => {
                         if (riskShare.id === riskShareId) {
                           return {

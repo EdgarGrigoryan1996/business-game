@@ -1,13 +1,23 @@
-import React, { useState } from "react";
 import s from "../ShareSalePopup.module.css";
 import PopupTemplate from "../PopupTemplate/PopupTemplate.jsx";
-
-
+import { useState } from "react";
 
 function CostPopup({ player, setPlayer, setCostPopup }) {
   const handleCost = () => {
     setPlayer({
       ...player,
+      cashHistory: [
+        ...player.cashHistory,
+        {
+          dealTitle: "Ծախս",
+          type: "",
+          dealCount: null,
+          dealPrice: money,
+          moneyBeforeDeal: player.cashMoney,
+          totalMoney: `-${money}`,
+          moneyAfterDeal: player.cashMoney - +money,
+        },
+      ],
       cashMoney: player.cashMoney - money,
     });
     setCostPopup(false);

@@ -17,9 +17,15 @@ function Shares({ player, setSharePopupStatus }) {
           {player.shares.map((share) => {
             return (
               <tr key={share.id}>
-                <td>{share.title}</td>
-                <td>
-                  {share.balance ? share.balance : "Չունեք գնված ակցիաներ"}
+                <td className={g.shareTitle}>{share.title}</td>
+                <td
+                  className={
+                    share.balance ? g.withShareBalance : g.shareBalance
+                  }
+                >
+                  <span>
+                    {share.balance ? share.balance : "Չունեք գնված ակցիաներ"}
+                  </span>
                 </td>
                 <td className={g.noBorder}>
                   <span
@@ -33,7 +39,7 @@ function Shares({ player, setSharePopupStatus }) {
                       })
                     }
                   >
-                    <CiShoppingCart color={"#217821"} size={28} />
+                    <CiShoppingCart color={"#06442D"} size={28} />
                   </span>
                 </td>
                 <td className={g.noBorder}>

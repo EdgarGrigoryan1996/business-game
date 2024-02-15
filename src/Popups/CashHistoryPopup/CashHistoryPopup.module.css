@@ -1,0 +1,27 @@
+.historyBlock{
+    width: 100%;
+}
+.historyDealBlock{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 5px;
+    font-size: 8px;
+    box-sizing: border-box;
+    margin-bottom: 2px;
+}
+.historyBuyBlock{
+    background-color: #ed7979;
+}
+.historySellBlock{
+    background-color: #9fda9f;
+}
+.historyDealBlock div{
+    width: 14%;
+    padding: 0 5px;
+}
+.historyDealBlock .riskDeal span{
+    background-color: #191919;
+    color: white;
+    padding: 5px;
+}

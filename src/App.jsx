@@ -6,12 +6,14 @@ import Tabs from "./components/Tabs/Tabs.jsx";
 import ShareSalePopup from "./Popups/ShareSalePopup.jsx";
 import RiskSharePopup from "./Popups/RiskSharePopup/RiskSharePopup.jsx";
 import CostPopup from "./Popups/CostPopup/CostPopup.jsx";
+import CashHistoryPopup from "./Popups/CashHistoryPopup/CashHistoryPopup.jsx";
 
 export default function Home() {
   const [gameStarted, setGameStarted] = useState(false);
   const [player, setPlayer] = useState({
     riskDealCircleCount: 2,
     cashMoney: null,
+    cashHistory: [],
     salary: null,
     passiveIncome: 0,
     monthlyIncome: null,
@@ -90,6 +92,7 @@ export default function Home() {
     riskShareSellPrice: null,
   });
   const [costPopup, setCostPopup] = useState(false);
+  const [historyPopup, setHistoryPopup] = useState(false);
 
   useEffect(() => {
     const loanPercent = (player.loans / 100) * 10;
@@ -129,7 +132,14 @@ export default function Home() {
       <div className={g.topInfo}>
         <div className={g.topInfoItemBlock}>
           <button className={g.btn + " " + g.cashBtn}>
-            <div>Կանխիկ</div> <span>{player.cashMoney}</span>
+            <div
+              onClick={() => {
+                setHistoryPopup(true);
+              }}
+            >
+              Կանխիկ
+            </div>{" "}
+            <span>{player.cashMoney}</span>
           </button>
         </div>
         <div className={g.topInfoItemBlock}>
@@ -145,6 +155,18 @@ export default function Home() {
                 setPlayer({
                   ...player,
                   cashMoney: +player.cashMoney + +player.monthlyIncome,
+                  cashHistory: [
+                    ...player.cashHistory,
+                    {
+                      dealTitle: "Աշխ",
+                      type: null,
+                      dealCount: null,
+                      dealPrice: null,
+                      moneyBeforeDeal: player.cashMoney,
+                      totalMoney: `+${+player.monthlyIncome}`,
+                      moneyAfterDeal: player.cashMoney + +player.monthlyIncome,
+                    },
+                  ],
                 });
               }}
             >
@@ -196,6 +218,9 @@ export default function Home() {
           setPlayer={setPlayer}
           setCostPopup={setCostPopup}
         />
+      )}
+      {historyPopup && (
+        <CashHistoryPopup player={player} setPopup={setHistoryPopup} />
       )}
     </div>
   );

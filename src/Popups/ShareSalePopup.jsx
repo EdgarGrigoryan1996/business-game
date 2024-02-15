@@ -1,6 +1,6 @@
-import React, { useState } from "react";
 import s from "./ShareSalePopup.module.css";
 import PopupBtn from "./PopupBtn";
+import { useState } from "react";
 function ShareSalePopup({
   player,
   setPlayer,
@@ -27,6 +27,18 @@ function ShareSalePopup({
       setPlayer({
         ...player,
         cashMoney: newCashMoney,
+        cashHistory: [
+          ...player.cashHistory,
+          {
+            dealTitle: "Առք",
+            type: `${shareTitle}`,
+            dealCount: count,
+            dealPrice: price,
+            moneyBeforeDeal: player.cashMoney,
+            totalMoney: `-${newShare}`,
+            moneyAfterDeal: player.cashMoney - +newShare,
+          },
+        ],
         shares: player.shares.map((share) => {
           if (share.id === shareId) {
             console.log("test");
@@ -55,10 +67,25 @@ function ShareSalePopup({
     if (!sellCount || !price) {
       alert("Թերի գործարք, եղեք ուշադիր");
       return false;
+    } else if (sellCount > sellShareCount) {
+      alert("Դուք չունեք նշվաժ քանակի ակցիաներ");
+      return false;
     }
     setPlayer({
       ...player,
       cashMoney: newCashMoney,
+      cashHistory: [
+        ...player.cashHistory,
+        {
+          dealTitle: "Վաճ",
+          type: `${shareTitle}`,
+          dealCount: sellCount,
+          dealPrice: price,
+          moneyBeforeDeal: player.cashMoney,
+          totalMoney: `+${newShare}`,
+          moneyAfterDeal: player.cashMoney + +newShare,
+        },
+      ],
       shares: player.shares.map((share) => {
         if (share.id === shareId) {
           return {

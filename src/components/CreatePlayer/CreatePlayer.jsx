@@ -104,7 +104,7 @@ function CreatePlayer({ player, setPlayer, setGameStarted }) {
         <AddRealEstatePopup
           player={player}
           setPlayer={setPlayer}
-          setRealEstatePopup={setRealEstatePopup}
+          setPopup={setRealEstatePopup}
         />
       )}
     </div>

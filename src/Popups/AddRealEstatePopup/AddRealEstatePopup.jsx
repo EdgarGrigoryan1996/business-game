@@ -10,8 +10,13 @@ function AddRealEstatePopup({
   setPopup,
 }) {
   const handleAdd = () => {
+    if (player.cashMoney < estatePrice) {
+      alert("Անբավարար գումար");
+      return false;
+    }
     setPlayer({
       ...player,
+      cashMoney: player.cashMoney - +estatePrice,
       realEstate: [
         ...player.realEstate,
         {
@@ -23,11 +28,27 @@ function AddRealEstatePopup({
           passiveIncome: +passiveIncome,
         },
       ],
+      cashHistory: [
+        ...player.cashHistory,
+        {
+          dealTitle: "Առք",
+          type: "Բնակարան",
+          dealCount: null,
+          dealPrice: estatePrice,
+          moneyBeforeDeal: player.cashMoney,
+          totalMoney: `-${estatePrice}`,
+          moneyAfterDeal: player.cashMoney - +estatePrice,
+        },
+      ],
     });
 
     setPopup(false);
   };
   const handleChangeEstate = () => {
+    if (player.cashMoney < estatePrice) {
+      alert("Անբավարար գումար");
+      return false;
+    }
     setPlayer({
       ...player,
       realEstate: player.realEstate.map((estate) => {
@@ -71,6 +92,7 @@ function AddRealEstatePopup({
   const [passiveIncome, setPassiveIncome] = useState(
     changeMode ? currentEstate.passiveIncome : "",
   );
+  const [estatePrice, setEstatePrice] = useState("");
   return (
     <PopupTemplate
       title={changeMode ? "Կատարել փոփոխություն" : "Ավելացնել բնակարան"}
@@ -129,6 +151,18 @@ function AddRealEstatePopup({
             />
           </div>
         </div>
+        {!changeMode && (
+          <div className={s.line}>
+            <div>Գին</div>
+            <div>
+              <input
+                type="number"
+                value={estatePrice}
+                onChange={(e) => setEstatePrice(e.target.value)}
+              />
+            </div>
+          </div>
+        )}
       </div>
     </PopupTemplate>
   );

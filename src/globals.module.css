@@ -37,10 +37,43 @@
     width: 100%;
     border-collapse: collapse;
 }
+.myTable tr {
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+}
 .myTable tr td {
-    border: 1px solid #777;
-    flex: 1;
     font-size: 12px;
+    padding: 5px 0;
+}
+.shareTitle{
+    width: 10%;
+    font-weight: 700;
+}
+.withShareBalance{
+    letter-spacing: 2px;
+    text-align: center;
+    width: 67%;
+}
+.withShareBalance span{
+    display: inline-block;
+    padding: 5px;
+    width: 100%;
+    font-weight: 700;
+    background-color: #06442D;
+    color: white;
+    box-sizing: border-box;
+}
+.shareBalance{
+    letter-spacing: 2px;
+    text-align: center;
+    width: 67%;
+}
+.shareBalance span{
+    display: inline-block;
+    padding: 5px;
+    width: 100%;
+    background-color: #ccc;
+    box-sizing: border-box;
 }
 .myTable tr td.noBorder {
     border: none;

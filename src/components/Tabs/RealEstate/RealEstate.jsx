@@ -24,6 +24,18 @@ function RealEstate({ player, setPlayer }) {
     setPlayer({
       ...player,
       cashMoney: player.cashMoney + +sellPrice,
+      cashHistory: [
+        ...player.cashHistory,
+        {
+          dealTitle: "Վաճ",
+          type: "Բնակարան",
+          dealCount: null,
+          dealPrice: +sellPrice,
+          moneyBeforeDeal: player.cashMoney,
+          totalMoney: `+${sellPrice}`,
+          moneyAfterDeal: player.cashMoney + +sellPrice,
+        },
+      ],
       realEstate: player.realEstate.filter((estate) => {
         return estate.id !== sellEstatePopup.currentEstateId;
       }),

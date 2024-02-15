@@ -1,10 +1,8 @@
-
-import React, { useState } from "react";
 import s from "./Tabs.module.css";
 import AllShares from "./AllShares/AllShares.jsx";
 import RealEstate from "./RealEstate/RealEstate.jsx";
 import Business from "./Business/Business.jsx";
-
+import { useState } from "react";
 
 function Tabs({
   player,

@@ -145,7 +145,7 @@ function RiskShare({ player, setPlayer, setRiskSharePopupStatus }) {
                   });
                 }}
               >
-                <CiShoppingCart color={"#217821"} size={28} />
+                <CiShoppingCart color={"#06442D"} size={28} />
               </span>
             </div>
           );

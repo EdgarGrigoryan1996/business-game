@@ -11,8 +11,17 @@
     border: none;
 }
 .active{
-    background: white;
-    color: #191919;
-    border: 1px solid #fff;
+    position: relative;
     font-weight: 700;
+    background-color: #006AE8;
+}
+.active:before{
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    bottom: -10px;
+    left: 55%;
+    background-color: white;
+    transform: rotate(45deg) translate(-50%, 50%);
 }
