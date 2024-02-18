@@ -1,5 +1,6 @@
 import PopupTemplate from "../PopupTemplate/PopupTemplate.jsx";
 import s from "./CashHistoryPopup.module.css";
+import setCashHistoryTitleBackground from "../../utils/setCashHistoryTitleBackground.js";
 
 function CashHistoryPopup({ player, setPopup }) {
   const handleCancel = () => {
@@ -13,6 +14,7 @@ function CashHistoryPopup({ player, setPopup }) {
     >
       <div className={s.historyBlock}>
         {player.cashHistory.map((deal) => {
+          const titleColor = setCashHistoryTitleBackground(deal.dealTitle);
           return (
             <div
               key={Math.random()}
@@ -24,7 +26,17 @@ function CashHistoryPopup({ player, setPopup }) {
                 s.historyDealBlock
               }
             >
-              <div>{deal.dealTitle}</div>
+              <div>
+                <span
+                  style={{
+                    backgroundColor: titleColor,
+                    color: "#fff",
+                    padding: "5px",
+                  }}
+                >
+                  {deal.dealTitle}
+                </span>
+              </div>
               <div className={deal.riskDeal && s.riskDeal}>
                 <span>{deal.type}</span>
               </div>

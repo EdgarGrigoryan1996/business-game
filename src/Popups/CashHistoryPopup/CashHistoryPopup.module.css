@@ -1,5 +1,7 @@
 .historyBlock{
     width: 100%;
+    max-height: 80%;
+    overflow-y: scroll;
 }
 .historyDealBlock{
     display: flex;
@@ -8,13 +10,13 @@
     padding: 5px;
     font-size: 8px;
     box-sizing: border-box;
-    margin-bottom: 2px;
+    margin-bottom: 3px;
 }
 .historyBuyBlock{
-    background-color: #ed7979;
+    background-color: #ffd1d1;
 }
 .historySellBlock{
-    background-color: #9fda9f;
+    background-color: #d2ffd2;
 }
 .historyDealBlock div{
     width: 14%;

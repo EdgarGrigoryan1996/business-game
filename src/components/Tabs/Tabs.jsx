@@ -26,7 +26,10 @@ function Tabs({
       label: "Անշարժ գույք",
       content: <RealEstate player={player} setPlayer={setPlayer} />,
     },
-    { label: "Բիզնեսներ", content: <Business /> },
+    {
+      label: "Բիզնեսներ",
+      content: <Business player={player} setPlayer={setPlayer} />,
+    },
   ];
   const [activeTab, setActiveTab] = useState(0);
 

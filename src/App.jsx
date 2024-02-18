@@ -74,6 +74,26 @@ export default function Home() {
         passiveIncome: 300,
       },
     ],
+    business: [
+      {
+        id: Math.random(),
+        name: "Business Name",
+        passiveIncome: 500,
+        duty: 5000,
+      },
+      {
+        id: Math.random(),
+        name: "Business Name",
+        passiveIncome: 500,
+        duty: 5000,
+      },
+      {
+        id: Math.random(),
+        name: "Business Name",
+        passiveIncome: 500,
+        duty: 500000,
+      },
+    ],
   });
 
   const [sharePopupStatus, setSharePopupStatus] = useState({
@@ -111,12 +131,14 @@ export default function Home() {
     const realEstatesIncome = player.realEstate.reduce((aggr, val) => {
       return aggr + val.passiveIncome;
     }, 0);
-    console.log(realEstatesIncome);
+    const businessIncome = player.business.reduce((aggr, val) => {
+      return aggr + +val.passiveIncome;
+    }, 0);
     setPlayer({
       ...player,
-      passiveIncome: +realEstatesIncome,
+      passiveIncome: +realEstatesIncome + +businessIncome,
     });
-  }, [player.realEstate, gameStarted]);
+  }, [player.realEstate, player.business, gameStarted]);
   if (!gameStarted) {
     return (
       <CreatePlayer

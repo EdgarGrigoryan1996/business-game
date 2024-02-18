@@ -1,0 +1,50 @@
+.businessBlock:first-child{
+    font-weight: 700;
+    margin-top: 20px;
+}
+.businessBlock{
+    display: flex;
+    font-size: 12px;
+    letter-spacing: 1px;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+}
+.businessBlock div{
+    width: 20%;
+}
+.businessBlock div:first-child{
+    width: 40%;
+}
+.controls{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    font-size: 12px;
+}
+.addBusinessBtnBlock{
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+.addBusinessBtnBlock button{
+    width: 50%;
+    border: none;
+    background-color: #06442D;
+    color: white;
+    padding: 5px 0;
+    font-size: 9px;
+    border-radius: 5px;
+}
+.sellPrice{
+    text-align: center;
+    letter-spacing: 1px;
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+    transition: 0.2s;
+}
+.sellPrice:focus{
+    border-color: #06442D;
+}

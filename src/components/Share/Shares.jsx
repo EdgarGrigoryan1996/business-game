@@ -5,7 +5,6 @@ import { LiaHandHoldingUsdSolid } from "react-icons/lia";
 function Shares({ player, setSharePopupStatus }) {
   return (
     <div>
-      <h5>Բաժմետոմսեր</h5>
       <table className={g.myTable}>
         <thead>
           <tr>

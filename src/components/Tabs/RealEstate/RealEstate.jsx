@@ -59,7 +59,6 @@ function RealEstate({ player, setPlayer }) {
   };
   return (
     <div>
-      <h5>Ժառանգություն</h5>
       {player.realEstate.length ? (
         <table className={s.realEstateTable}>
           <thead>
@@ -103,10 +102,11 @@ function RealEstate({ player, setPlayer }) {
                           });
                         }}
                       >
-                        <FaPen />
+                        <FaPen color={"#006AE8"} />
                       </span>
                       <span>
                         <FaDollarSign
+                          color={"#06442D"}
                           onClick={() => {
                             setSellEstatePopup({
                               status: true,
@@ -117,6 +117,7 @@ function RealEstate({ player, setPlayer }) {
                       </span>
                       <span>
                         <MdDelete
+                          color={"#C53434"}
                           onClick={() => {
                             setDeleteEstatePopup({
                               status: true,
@@ -133,7 +134,16 @@ function RealEstate({ player, setPlayer }) {
           </tbody>
         </table>
       ) : (
-        <div>No Real Estate</div>
+        <>
+          <h6>Չունեք ժառանգություն</h6>
+          <iframe
+            style={{
+              border: "none",
+              width: "100%",
+            }}
+            src="https://lottie.host/embed/2d13653b-6db5-43e9-9370-baafc581bb72/0DWvcTlx3H.json"
+          ></iframe>
+        </>
       )}
       <div className={s.addEstateBtnBlock}>
         <button
