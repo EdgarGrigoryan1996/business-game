@@ -13,6 +13,9 @@ function AddRealEstatePopup({
     if (player.cashMoney < estatePrice) {
       alert("Անբավարար գումար");
       return false;
+    } else if (!rooms || !passiveIncome) {
+      alert("Թերի գործարք");
+      return false;
     }
     setPlayer({
       ...player,

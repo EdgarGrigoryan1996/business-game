@@ -4,6 +4,13 @@ import { useState } from "react";
 
 function CostPopup({ player, setPlayer, setCostPopup }) {
   const handleCost = () => {
+    if (player.cashMoney < money) {
+      alert("Անբավարար գումար");
+      return false;
+    } else if (!money) {
+      alert("Նշեք ծախսվող գումարը");
+      return false;
+    }
     setPlayer({
       ...player,
       cashHistory: [

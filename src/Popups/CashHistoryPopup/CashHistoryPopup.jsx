@@ -31,7 +31,10 @@ function CashHistoryPopup({ player, setPopup }) {
                   style={{
                     backgroundColor: titleColor,
                     color: "#fff",
+                    display: "inline-block",
                     padding: "5px",
+                    width: "23px",
+                    textAlign: "center",
                   }}
                 >
                   {deal.dealTitle}

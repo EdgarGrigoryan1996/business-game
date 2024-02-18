@@ -1,6 +1,6 @@
-import React, { useState } from "react";
 import s from "./StartSharePopup.module.css";
 import PopupTemplate from "../PopupTemplate/PopupTemplate.jsx";
+import { useState } from "react";
 
 function StartSharePopup({ startPlayer, setStartPlayer, setStartSharePopup }) {
   const [adidas, setAdidas] = useState({
@@ -42,9 +42,9 @@ function StartSharePopup({ startPlayer, setStartPlayer, setStartSharePopup }) {
     >
       <div className={s.sharesBlock}>
         <div className={s.shareLine}>
-          <div>{adidas.title}</div>
           <input
             type="number"
+            placeholder={adidas.title}
             value={adidas.balance}
             onChange={(e) => {
               setAdidas({
@@ -58,9 +58,9 @@ function StartSharePopup({ startPlayer, setStartPlayer, setStartSharePopup }) {
 
       <div className={s.sharesBlock}>
         <div className={s.shareLine}>
-          <div>{busy.title}</div>
           <input
             type="number"
+            placeholder={busy.title}
             value={busy.balance}
             onChange={(e) => {
               setBusy({
@@ -74,9 +74,9 @@ function StartSharePopup({ startPlayer, setStartPlayer, setStartSharePopup }) {
 
       <div className={s.sharesBlock}>
         <div className={s.shareLine}>
-          <div>{pepsi.title}</div>
           <input
             type="number"
+            placeholder={pepsi.title}
             value={pepsi.balance}
             onChange={(e) => {
               setPepsi({
@@ -90,9 +90,9 @@ function StartSharePopup({ startPlayer, setStartPlayer, setStartSharePopup }) {
 
       <div className={s.sharesBlock}>
         <div className={s.shareLine}>
-          <div>{elit.title}</div>
           <input
             type="number"
+            placeholder={elit.title}
             value={elit.balance}
             onChange={(e) => {
               setElit({

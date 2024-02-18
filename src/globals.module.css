@@ -1,161 +1,214 @@
-.topInfo{
-    background-color: #06442D;
-    display: flex;
-    justify-content: space-between;
-    color: white;
-    padding: 10px 5px;
-    font-size: 8px;
-    align-items: center;
-    letter-spacing: 1px;
+.createPLayerBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
-.topInfoItemBlock{
-    width: 32%;
+.topInfo {
+  background-color: #06442d;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  padding: 10px 5px;
+  font-size: 8px;
+  align-items: center;
+  letter-spacing: 1px;
 }
-.topInfo span{
-    font-size: 14px;
-    font-weight: bold;
+.topInfoItemBlock {
+  width: 32%;
 }
-.topControlGroup{
-    display: flex;
-    justify-content: space-between;
-    padding: 5px 0;
-    font-size: 14px;
+.topInfo span {
+  font-size: 14px;
+  font-weight: bold;
 }
-.underlineInput{
-    border: none;
-    border-bottom: 1px solid #777;
-    outline: none;
-    text-align: center;
-    font-weight: bold;
-    width: 100px;
+.topControlGroup {
+  display: flex;
+  justify-content: center;
+  padding: 5px 0;
+  font-size: 14px;
+  margin-bottom: 25px;
 }
-.tableInputs{
-    border:none;
-    outline: none;
+.underlineInput {
+  border: none;
+  border-bottom: 1px solid #777;
+  outline: none;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+  transition: 0.2s;
+  letter-spacing: 1px;
 }
-.myTable{
-    margin-top: 20px;
-    width: 100%;
-    border-collapse: collapse;
+
+/* CSS */
+.myButton {
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+  display: inline-flex;
+  font-family:
+    system-ui,
+    -apple-system,
+    system-ui,
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(0.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.underlineInput:focus {
+  border-color: #06442d;
+}
+
+.tableInputs {
+  border: none;
+  outline: none;
+}
+.myTable {
+  margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
 }
 .myTable tr {
-    border-bottom: 1px solid #ccc;
-    width: 100%;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
 }
 .myTable tr td {
-    font-size: 12px;
-    padding: 5px 0;
+  font-size: 12px;
+  padding: 5px 0;
 }
-.shareTitle{
-    width: 10%;
-    font-weight: 700;
+.shareTitle {
+  width: 10%;
+  font-weight: 700;
 }
-.withShareBalance{
-    letter-spacing: 2px;
-    text-align: center;
-    width: 67%;
+.withShareBalance {
+  letter-spacing: 2px;
+  text-align: center;
+  width: 67%;
 }
-.withShareBalance span{
-    display: inline-block;
-    padding: 5px;
-    width: 100%;
-    font-weight: 700;
-    background-color: #06442D;
-    color: white;
-    box-sizing: border-box;
+.withShareBalance span {
+  display: inline-block;
+  padding: 5px;
+  width: 100%;
+  font-weight: 700;
+  background-color: #06442d;
+  color: white;
+  box-sizing: border-box;
 }
-.shareBalance{
-    letter-spacing: 2px;
-    text-align: center;
-    width: 67%;
+.shareBalance {
+  letter-spacing: 2px;
+  text-align: center;
+  width: 67%;
 }
-.shareBalance span{
-    display: inline-block;
-    padding: 5px;
-    width: 100%;
-    background-color: #ccc;
-    box-sizing: border-box;
+.shareBalance span {
+  display: inline-block;
+  padding: 5px;
+  width: 100%;
+  background-color: #ccc;
+  box-sizing: border-box;
 }
 .myTable tr td.noBorder {
-    border: none;
-    color: white;
+  border: none;
+  color: white;
 }
-.btn{
-    border: none;
-    border-radius: 3px;
-    padding: 10px;
-    width: 100%;
-    height: 50px;
-    cursor: pointer;
+.btn {
+  border: none;
+  border-radius: 3px;
+  padding: 10px;
+  width: 100%;
+  height: 50px;
+  cursor: pointer;
 }
-.salaryBtn{
-    background-color: orange;
-    color: white;
-
+.salaryBtn {
+  background-color: orange;
+  color: white;
 }
-.cashBtn{
-    background-color: #20b734;
-    color: white;
+.cashBtn {
+  background-color: #20b734;
+  color: white;
 }
-.passiveBtn{
-    background-color: #006AE8;
-    color: white;
+.passiveBtn {
+  background-color: #006ae8;
+  color: white;
 }
 .topControlInfo {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-
-
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
-.childrenBtn{
-    display: flex;
-    position: relative;
-    color: white;
-    width: 32%;
+.childrenBtn {
+  display: flex;
+  position: relative;
+  color: white;
+  width: 32%;
 }
-.loanBtn{
-    width: 32%;
-    background-color: #c53434;
-    color: white;
+.loanBtn {
+  width: 32%;
+  background-color: #c53434;
+  color: white;
 }
-.costBtn{
-    width: 32%;
-    background-color: #191919;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2px;
+.costBtn {
+  width: 32%;
+  background-color: #191919;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
 }
-.childrenBlock{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 35%;
-    height: 100%;
-    background-color: #191919;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 22px;
-    font-weight: 700;
+.childrenBlock {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 35%;
+  height: 100%;
+  background-color: #191919;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  font-weight: 700;
 }
-.addChildrenBtn{
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 65%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px;
-    background-color: #591D59;
-
+.addChildrenBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 65%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  background-color: #591d59;
 }
-.shareBtn{
-    cursor: pointer;
+.shareBtn {
+  cursor: pointer;
 }
-

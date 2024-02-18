@@ -1,12 +1,18 @@
-.sharesBlock{
-    width: 100%;
+.sharesBlock {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
-.shareLine{
-    display: flex;
-    justify-content: space-between;
-    padding: 0 10px;
+.shareLine {
+  display: flex;
+  justify-content: center;
+  padding: 0 5px;
 }
-.shareLine input{
-    width: 100px;
-    outline: none;
+.shareLine input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  padding: 10px 0;
+  letter-spacing: 1px;
 }

@@ -170,32 +170,30 @@ export default function Home() {
           </button>
         </div>
         <div className={g.topInfoItemBlock}>
-          <div className={g.topControlGroup}>
-            <button
-              className={g.btn + " " + g.salaryBtn}
-              onClick={() => {
-                setPlayer({
-                  ...player,
-                  cashMoney: +player.cashMoney + +player.monthlyIncome,
-                  cashHistory: [
-                    ...player.cashHistory,
-                    {
-                      dealTitle: "Աշխ",
-                      type: null,
-                      dealCount: null,
-                      dealPrice: null,
-                      moneyBeforeDeal: player.cashMoney,
-                      totalMoney: `+${+player.monthlyIncome}`,
-                      moneyAfterDeal: player.cashMoney + +player.monthlyIncome,
-                    },
-                  ],
-                });
-              }}
-            >
-              <div>Աշխատավարձ</div>
-              <span>+ {player.monthlyIncome}</span>
-            </button>
-          </div>
+          <button
+            className={g.btn + " " + g.salaryBtn}
+            onClick={() => {
+              setPlayer({
+                ...player,
+                cashMoney: +player.cashMoney + +player.monthlyIncome,
+                cashHistory: [
+                  ...player.cashHistory,
+                  {
+                    dealTitle: "Աշխ",
+                    type: null,
+                    dealCount: null,
+                    dealPrice: null,
+                    moneyBeforeDeal: player.cashMoney,
+                    totalMoney: `+${+player.monthlyIncome}`,
+                    moneyAfterDeal: player.cashMoney + +player.monthlyIncome,
+                  },
+                ],
+              });
+            }}
+          >
+            <div>Աշխատավարձ</div>
+            <span>+ {player.monthlyIncome}</span>
+          </button>
         </div>
       </div>
 
