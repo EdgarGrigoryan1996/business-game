@@ -4,6 +4,8 @@ import { MdDelete } from "react-icons/md";
 import { useState } from "react";
 import AddBusinessPopup from "../../../Popups/AddBusinessPopup/AddBusinessPopup.jsx";
 import PopupTemplate from "../../../Popups/PopupTemplate/PopupTemplate.jsx";
+import MyLottie from "../../MyLottie/MyLottie.jsx";
+import notFound from "../../../assets/lottieData/notFound.json";
 
 function Business({ player, setPlayer }) {
   const [sellPrice, setSellPrice] = useState("");
@@ -117,13 +119,7 @@ function Business({ player, setPlayer }) {
           </>
         ) : (
           <div>
-            <iframe
-              style={{
-                border: "none",
-                width: "100%",
-              }}
-              src="https://lottie.host/embed/2d13653b-6db5-43e9-9370-baafc581bb72/0DWvcTlx3H.json"
-            ></iframe>
+            <MyLottie data={notFound} />
           </div>
         )}
       </div>

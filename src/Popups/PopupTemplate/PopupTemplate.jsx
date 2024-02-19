@@ -4,6 +4,7 @@ import PopupBtn from "../PopupBtn.jsx";
 function PopupTemplate({
   title,
   successTitle,
+  cancelTitle,
   bigPopup,
   handleSuccess,
   handleCancel,
@@ -23,17 +24,19 @@ function PopupTemplate({
                 <PopupBtn
                   title={successTitle}
                   color={"#fff"}
-                  background={"#217821"}
+                  background={"#457b45"}
                   handleFunction={handleSuccess}
                 />
               )}
 
-              <PopupBtn
-                title={"Չեղարկել"}
-                color={"#fff"}
-                background={"#d53838"}
-                handleFunction={handleCancel}
-              />
+              {handleCancel && (
+                <PopupBtn
+                  title={cancelTitle ? cancelTitle : "Չեղարկել"}
+                  color={"#fff"}
+                  background={"#d85555"}
+                  handleFunction={handleCancel}
+                />
+              )}
             </div>
           </>
         </div>

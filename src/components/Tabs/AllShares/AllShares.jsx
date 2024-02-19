@@ -1,7 +1,5 @@
-import React from "react";
 import Shares from "../../Share/Shares.jsx";
 import RiskShare from "../../RiskShare/RiskShare.jsx";
-
 
 function AllShares({
   player,

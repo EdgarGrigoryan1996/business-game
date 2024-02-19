@@ -1,0 +1,25 @@
+.gettingHomeContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px 0;
+}
+.gettingHomeContent img {
+  width: 40%;
+}
+.gettingHomeText {
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 14px;
+}
+.salut1 {
+  position: absolute;
+  left: -75px;
+  top: -50px;
+}
+.salut2 {
+  position: absolute;
+  right: -25px;
+  bottom: 0;
+}

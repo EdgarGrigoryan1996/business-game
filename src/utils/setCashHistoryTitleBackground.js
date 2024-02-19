@@ -7,6 +7,8 @@ const setCashHistoryTitleBackground = (title) => {
     return "#20B734";
   } else if (title === "Առք") {
     return "#C53434";
+  } else if (title === "Մուտք") {
+    return "#ed8147";
   }
 };
 

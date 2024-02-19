@@ -105,7 +105,7 @@ function RiskSharePopup({
                 <PopupBtn
                   title={"Գնել"}
                   color={"#fff"}
-                  background={"#217821"}
+                  background={"#457b45"}
                   handleFunction={() => {
                     buyRiskShare();
                     closePopup();
@@ -114,7 +114,7 @@ function RiskSharePopup({
                 <PopupBtn
                   title={"Չեղարկել"}
                   color={"#fff"}
-                  background={"#d53838"}
+                  background={"#d85555"}
                   handleFunction={() => closePopup()}
                 />
               </div>
@@ -137,10 +137,8 @@ function RiskSharePopup({
                 <PopupBtn
                   title={"Վաճառել"}
                   color={"#fff"}
-                  background={"#217821"}
+                  background={"#457b45"}
                   handleFunction={() => {
-                    console.log(sellCount);
-                    console.log(sellPrice);
                     setPlayer({
                       ...player,
                       cashMoney:
@@ -180,7 +178,7 @@ function RiskSharePopup({
                 <PopupBtn
                   title={"Չեղարկել"}
                   color={"#fff"}
-                  background={"#d53838"}
+                  background={"#d85555"}
                   handleFunction={() => {
                     setRiskSharePopupStatus({
                       status: false,

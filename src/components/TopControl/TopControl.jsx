@@ -1,8 +1,7 @@
-
-import React from "react";
 import g from "../../globals.module.css";
 import { LuBaby } from "react-icons/lu";
 import { GiReceiveMoney } from "react-icons/gi";
+import { PiCurrencyDollarThin } from "react-icons/pi";
 function TopControl({ player, setPlayer, setCostPopup }) {
   const addChildren = () => {
     if (player.children < 4) {
@@ -14,18 +13,6 @@ function TopControl({ player, setPlayer, setCostPopup }) {
   };
   return (
     <div>
-      {/*<div className={g.topControlGroup}>*/}
-      {/*  <b>Աշխատավարձ</b>*/}
-      {/*  <span>{player.salary}</span>*/}
-      {/*</div>*/}
-      {/*<div className={g.topControlGroup}>*/}
-      {/*  <b>Պասիվ եկամուտ</b>*/}
-      {/*  <span>{player.passiveIncome}</span>*/}
-      {/*</div>*/}
-      {/*<div className={g.topControlGroup}>*/}
-      {/*  <b>Ամսական ծախսեր</b>*/}
-      {/*  <span>{player.monthlyExpenses}</span>*/}
-      {/*</div>*/}
       <div className={g.topControlGroup}>
         <div className={g.topControlInfo}>
           <button className={g.btn + " " + g.childrenBtn}>
@@ -40,8 +27,10 @@ function TopControl({ player, setPlayer, setCostPopup }) {
           <button
             className={g.btn + " " + g.costBtn}
             onClick={() => {
-              console.log("test");
-              setCostPopup(true);
+              setCostPopup({
+                status: true,
+                costMode: true,
+              });
             }}
           >
             <span>
@@ -49,14 +38,22 @@ function TopControl({ player, setPlayer, setCostPopup }) {
             </span>
             <div>Ծախսել</div>
           </button>
+          <button
+            className={g.btn + " " + g.getMoneyBtn}
+            onClick={() => {
+              setCostPopup({
+                status: true,
+                costMode: false,
+              });
+            }}
+          >
+            <span>
+              <PiCurrencyDollarThin size={24} />
+            </span>
+            <div>Ստանալ</div>
+          </button>
         </div>
       </div>
-      {/*<div className={g.topControlGroup}>*/}
-      {/*  <b>Ամսեկան եկամուտ</b>*/}
-      {/*  <span>*/}
-      {/*    <b>{player.monthlyIncome}</b>*/}
-      {/*  </span>*/}
-      {/*</div>*/}
     </div>
   );
 }

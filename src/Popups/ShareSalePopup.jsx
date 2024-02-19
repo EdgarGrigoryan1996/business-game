@@ -131,13 +131,13 @@ function ShareSalePopup({
                 <PopupBtn
                   title={"Գնել"}
                   color={"#fff"}
-                  background={"#217821"}
+                  background={"#457b45"}
                   handleFunction={handleBuy}
                 />
                 <PopupBtn
                   title={"Չեղարկել"}
                   color={"#fff"}
-                  background={"#d53838"}
+                  background={"#d85555"}
                   handleFunction={() =>
                     setSharePopupStatus({
                       status: false,
@@ -171,13 +171,13 @@ function ShareSalePopup({
                 <PopupBtn
                   title={"Վաճառել"}
                   color={"#fff"}
-                  background={"#217821"}
+                  background={"#457b45"}
                   handleFunction={handleSell}
                 />
                 <PopupBtn
                   title={"Չեղարկել"}
                   color={"#fff"}
-                  background={"#d53838"}
+                  background={"#d85555"}
                   handleFunction={() =>
                     setSharePopupStatus({
                       status: false,

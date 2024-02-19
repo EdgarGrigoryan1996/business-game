@@ -4,7 +4,15 @@ import { FaDollarSign, FaPen } from "react-icons/fa";
 import AddRealEstatePopup from "../../../Popups/AddRealEstatePopup/AddRealEstatePopup.jsx";
 import { useState } from "react";
 import PopupTemplate from "../../../Popups/PopupTemplate/PopupTemplate.jsx";
+import Lottie from "react-lottie";
+import notFound from "../../../assets/lottieData/notFound.json";
+import MyLottie from "../../MyLottie/MyLottie.jsx";
 
+const defaultOptions = {
+  loop: true,
+  autoplay: true,
+  animationData: notFound,
+};
 function RealEstate({ player, setPlayer }) {
   const [realEstatePopup, setRealEstatePopup] = useState(false);
   const [changeEstatePopup, setChangeEstatePopup] = useState({
@@ -135,14 +143,7 @@ function RealEstate({ player, setPlayer }) {
         </table>
       ) : (
         <>
-          <h6>Չունեք ժառանգություն</h6>
-          <iframe
-            style={{
-              border: "none",
-              width: "100%",
-            }}
-            src="https://lottie.host/embed/2d13653b-6db5-43e9-9370-baafc581bb72/0DWvcTlx3H.json"
-          ></iframe>
+          <MyLottie data={notFound} />
         </>
       )}
       <div className={s.addEstateBtnBlock}>

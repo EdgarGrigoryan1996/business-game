@@ -7,6 +7,7 @@ import ShareSalePopup from "./Popups/ShareSalePopup.jsx";
 import RiskSharePopup from "./Popups/RiskSharePopup/RiskSharePopup.jsx";
 import CostPopup from "./Popups/CostPopup/CostPopup.jsx";
 import CashHistoryPopup from "./Popups/CashHistoryPopup/CashHistoryPopup.jsx";
+import GettingHousePopup from "./Popups/GettingHousePopup/GettingHousePopup.jsx";
 
 export default function Home() {
   const [gameStarted, setGameStarted] = useState(false);
@@ -95,7 +96,6 @@ export default function Home() {
       },
     ],
   });
-
   const [sharePopupStatus, setSharePopupStatus] = useState({
     status: false,
     mode: null,
@@ -111,11 +111,16 @@ export default function Home() {
     riskShareId: null,
     riskShareSellPrice: null,
   });
-  const [costPopup, setCostPopup] = useState(false);
+  const [costPopup, setCostPopup] = useState({
+    status: false,
+    costMode: null,
+  });
   const [historyPopup, setHistoryPopup] = useState(false);
+  const [gettingHomePopup, setGettingHomePopup] = useState(false);
 
   useEffect(() => {
     const loanPercent = (player.loans / 100) * 10;
+
     setPlayer({
       ...player,
       monthlyIncome:
@@ -126,6 +131,26 @@ export default function Home() {
         loanPercent,
     });
   }, [player.children, player.loans, player.passiveIncome]);
+
+  useEffect(() => {
+    if (player.children === 4) {
+      setGettingHomePopup(true);
+      setPlayer({
+        ...player,
+        realEstate: [
+          ...player.realEstate,
+          {
+            id: Math.random(),
+            rooms: 3,
+            renovated: true,
+            inTheCenter: true,
+            duty: 0,
+            passiveIncome: 600,
+          },
+        ],
+      });
+    }
+  }, [player.children]);
 
   useEffect(() => {
     const realEstatesIncome = player.realEstate.reduce((aggr, val) => {
@@ -232,16 +257,18 @@ export default function Home() {
           setRiskSharePopupStatus={setRiskSharePopupStatus}
         />
       )}
-      {costPopup && (
+      {costPopup.status && (
         <CostPopup
           player={player}
           setPlayer={setPlayer}
           setCostPopup={setCostPopup}
+          costMode={costPopup.costMode}
         />
       )}
       {historyPopup && (
         <CashHistoryPopup player={player} setPopup={setHistoryPopup} />
       )}
+      {gettingHomePopup && <GettingHousePopup setPopup={setGettingHomePopup} />}
     </div>
   );
 }
